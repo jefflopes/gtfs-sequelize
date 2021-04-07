@@ -1,7 +1,7 @@
 var util = require('../../lib/util')
 
 module.exports = function(sequelize, DataTypes) {
-  var ShapeGIS = sequelize.define("shape_gis", {
+  var ShapeGIS = sequelize.define(util.getTablePrefix + "shape_gis", {
     shape_id: {
       type: DataTypes.STRING(255),
       primaryKey: true

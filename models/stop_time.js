@@ -1,7 +1,7 @@
 var util = require('../lib/util')
 
 module.exports = function(sequelize, DataTypes) {
-  var StopTime = sequelize.define("stop_time", {
+  var StopTime = sequelize.define(util.getTablePrefix + "stop_time", {
     trip_id: {
       type: DataTypes.STRING(255),
       primaryKey: true,

@@ -1,7 +1,7 @@
 var util = require('../lib/util')
 
 module.exports = function(sequelize, DataTypes) {
-  var Agency = sequelize.define("agency", {
+  var Agency = sequelize.define(util.getTablePrefix + "agency", {
     agency_id: {
       type: DataTypes.STRING(255),
       primaryKey: true

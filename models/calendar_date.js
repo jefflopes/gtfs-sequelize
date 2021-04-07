@@ -1,12 +1,12 @@
 var util = require('../lib/util')
 
 module.exports = function(sequelize, DataTypes) {
-  var CalendarDate = sequelize.define("calendar_date", {
+  var CalendarDate = sequelize.define(util.getTablePrefix + "calendar_date", {
     service_id: {
       type: DataTypes.STRING(255),
       primaryKey: true,
       references: {
-        model: util.makeModelReference(sequelize, "calendar"),
+        model: util.makeModelReference(sequelize, util.getTablePrefix + "calendar"),
         key: "service_id"
       }
     },

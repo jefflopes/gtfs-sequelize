@@ -1,11 +1,11 @@
 var util = require('../lib/util')
 
 module.exports = function(sequelize, DataTypes) {
-  var FareRule = sequelize.define("fare_rule", {
+  var FareRule = sequelize.define(util.getTablePrefix + "fare_rule", {
     fare_id: {
       type: DataTypes.STRING(255),
       references: {
-        model: util.makeModelReference(sequelize, "fare_attribute"),
+        model: util.makeModelReference(sequelize, util.getTablePrefix + "fare_attribute"),
         key: "fare_id"
       }
     },

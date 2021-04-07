@@ -1,7 +1,7 @@
 var util = require('../lib/util')
 
 module.exports = function(sequelize, DataTypes) {
-  var FareAttribute = sequelize.define("fare_attribute", {
+  var FareAttribute = sequelize.define(util.getTablePrefix + "fare_attribute", {
     fare_id: {
       type: DataTypes.STRING(255),
       primaryKey: true

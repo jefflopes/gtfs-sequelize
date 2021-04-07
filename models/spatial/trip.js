@@ -1,18 +1,18 @@
 var util = require('../../lib/util')
 
 module.exports = function(sequelize, DataTypes) {
-  var Trip = sequelize.define("trip", {
+  var Trip = sequelize.define(util.getTablePrefix + "trip", {
     route_id: {
       type: DataTypes.STRING(255),
       references: {
-        model: util.makeModelReference(sequelize, "route"),
+        model: util.makeModelReference(sequelize, util.getTablePrefix + "route"),
         key: "route_id"
       }
     },
     service_id: {
       type: DataTypes.STRING(255),
       references: {
-        model: util.makeModelReference(sequelize, "calendar"),
+        model: util.makeModelReference(sequelize, util.getTablePrefix + "calendar"),
         key: "service_id"
       }
     },
@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
     shape_id: {
       type: DataTypes.STRING(255),
       references: {
-        model: util.makeModelReference(sequelize, "shape_gis"),
+        model: util.makeModelReference(sequelize, util.getTablePrefix + "shape_gis"),
         key: "shape_id"
       }
     },

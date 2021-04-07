@@ -1,12 +1,12 @@
 var util = require('../lib/util')
 
 module.exports = function(sequelize, DataTypes) {
-  var Transfer = sequelize.define("transfer", {
+  var Transfer = sequelize.define(util.getTablePrefix + "transfer", {
     from_stop_id: {
       type: DataTypes.STRING(255),
       primaryKey: true,
       references: {
-        model: util.makeModelReference(sequelize, "stop"),
+        model: util.makeModelReference(sequelize, util.getTablePrefix + "stop"),
         key: "stop_id"
       }
     },
@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(255),
       primaryKey: true,
       references: {
-        model: util.makeModelReference(sequelize, "stop"),
+        model: util.makeModelReference(sequelize, util.getTablePrefix + "stop"),
         key: "stop_id"
       }
     },

@@ -1,7 +1,7 @@
 var util = require('../lib/util')
 
 module.exports = function(sequelize, DataTypes) {
-  var Route = sequelize.define("route", {
+  var Route = sequelize.define(util.getTablePrefix + "route", {
     route_id: {
       type: DataTypes.STRING(255),
       primaryKey: true

@@ -1,7 +1,7 @@
 var util = require('../lib/util')
 
 module.exports = function(sequelize, DataTypes) {
-  var Stop = sequelize.define("stop", {
+  var Stop = sequelize.define(util.getTablePrefix + "stop", {
     stop_id: {
       type: DataTypes.STRING(255),
       primaryKey: true

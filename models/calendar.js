@@ -1,7 +1,7 @@
 var util = require('../lib/util')
 
 module.exports = function(sequelize, DataTypes) {
-  var Calendar = sequelize.define("calendar", {
+  var Calendar = sequelize.define(util.getTablePrefix + "calendar", {
     service_id: {
       type: DataTypes.STRING(255),
       primaryKey: true

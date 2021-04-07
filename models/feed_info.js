@@ -1,7 +1,7 @@
 var util = require('../lib/util')
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define("feed_info", {
+  return sequelize.define(util.getTablePrefix + "feed_info", {
     feed_publisher_name: {
       type: DataTypes.STRING(255),
       primaryKey: true
